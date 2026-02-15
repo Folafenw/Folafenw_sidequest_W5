@@ -26,6 +26,11 @@ class WorldLevel {
     this.platforms = (levelJson.platforms ?? []).map(
       (p) => new Platform(p.x, p.y, p.w, p.h),
     );
+
+    // Spikes
+    this.spikes = (levelJson.spikes ?? []).map(
+      (s) => new Spike(s.x, s.y, s.w, s.h),
+    );
   }
 
 drawWorld() {
