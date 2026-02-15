@@ -29,7 +29,7 @@ class WorldLevel {
 
     // Spikes
     this.spikes = (levelJson.spikes ?? []).map(
-      (s) => new Spike(s.x, s.y, s.w, s.h),
+      (s) => new Platform(s.x, s.y, s.w, s.h),
     );
   }
 
@@ -45,9 +45,9 @@ drawWorld() {
 
   fill("#800020");
   for (const s of this.spikes) triangle(
-    s.x, s.y + s.h,
-    s.x + s.w /2, s.y,
-    s.x + s.w, s.y + s.h
+    s.x, s.y,
+    s.x + s.w /2, s.y + s.h,
+    s.x + s.w, s.y
   );
 }
 }
