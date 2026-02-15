@@ -42,5 +42,12 @@ drawWorld() {
 
   for (const p of this.platforms) rect(p.x, p.y, p.w, p.h); // x,y = top-left [web:234]
   pop();
+
+  fill("#800020");
+  for (const s of this.spikes) triangle(
+    s.x, s.y + s.h,
+    s.x + s.w /2, s.y,
+    s.x + s.w, s.y + s.h
+  );
 }
 }
